@@ -1,0 +1,221 @@
+/* ═══════════════════════════════════════════════════════════════════
+ * Waybar Modern Flat Design - Peach Sunset Edition
+ * Main Color: #FED6BC
+ * ═══════════════════════════════════════════════════════════════════ */
+
+/* ───────── Global Styles ───────── */
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  min-height: 0;
+}
+
+/* ───────── Window ───────── */
+window#waybar {
+  background: transparent;
+  color: #FFF5E1; /* Сливочный белый */
+  transition: none;
+  margin: 0;      /* Убирает внешние отступы самого бара */
+  padding: 0;     /* Убирает внутреннее пространство */
+  border: none;
+}
+
+/* ───────── Common Module Styles ───────── */
+#custom-launcher,
+#workspaces,
+#clock,
+#custom-player,
+#custom-weather,
+#custom-visualizer,
+#pulseaudio,
+#network,
+#bluetooth,
+#custom-clipboard,
+#custom-notifications,
+#custom-power,
+#tray,
+#cpu,
+#memory,
+#temperature,
+#disk,
+#battery,
+#backlight,
+#idle_inhibitor,
+#custom-updates,
+#keyboard-state,
+#privacy {
+  padding: 2px 8px;
+  margin: 1px 3px;
+  background: rgba(28, 25, 23, 0.85); /* Глубокий кофейный фон */
+  border-radius: 10px;
+  border: 1px solid rgba(254, 214, 188, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* Hover effects - Мягкое персиковое свечение */
+#custom-launcher:hover,
+#custom-power:hover,
+#custom-clipboard:hover,
+#custom-notifications:hover,
+#bluetooth:hover,
+#custom-weather:hover,
+#custom-updates:hover,
+#idle_inhibitor:hover {
+  background: rgba(254, 214, 188, 0.2);
+  border: 1px solid rgba(254, 214, 188, 0.4);
+  box-shadow: 0 0 10px rgba(254, 214, 188, 0.15);
+}
+
+/* ───────── Launcher ───────── */
+#custom-launcher {
+  color: #FED6BC;
+  font-size: 13px;
+}
+
+/* ───────── Workspaces ───────── */
+#workspaces {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#workspaces button {
+  padding: 2px 8px;
+  margin: 0 2px;
+  color: #E8D1C5;
+  background: rgba(45, 40, 37, 0.8);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  min-width: 24px;
+}
+
+#workspaces button.active {
+  background: #FED6BC;
+  color: #2D2825; /* Темный текст для контраста на светлом фоне */
+  border: 1px solid #FFB7B2;
+}
+
+#workspaces button:hover {
+  background: rgba(254, 214, 188, 0.4);
+  color: #FFF5E1;
+}
+
+/* ───────── Clock ───────── */
+#clock {
+  color: #FED6BC;
+  font-weight: 700;
+}
+
+/* ───────── Media Player ───────── */
+#custom-player {
+  color: #FFB7B2; /* Мягкий коралловый */
+}
+
+#custom-player.playing {
+  animation: pulse 2s infinite;
+}
+
+/* ───────── Audio ───────── */
+#pulseaudio {
+  color: #FED6BC;
+}
+
+#pulseaudio.muted {
+  color: #FF8B94;
+  background: rgba(255, 139, 148, 0.1);
+}
+
+/* ───────── System Stats (CPU, Mem, Temp) ───────── */
+#cpu {
+  color: #FFD8A8; /* Теплый песочный */
+}
+
+#memory {
+  color: #FFB7B2;
+}
+
+#temperature {
+  color: #FED6BC;
+}
+
+#cpu.critical, #memory.critical, #temperature.critical {
+  color: #FF8B94;
+  animation: blink 1s infinite;
+}
+
+/* ───────── Battery ───────── */
+#battery {
+  color: #FED6BC;
+}
+
+#battery.charging, #battery.plugged {
+  color: #FFD8A8;
+}
+
+#battery.critical:not(.charging) {
+  color: #FF8B94;
+  animation: blink 1s infinite;
+}
+
+/* ───────── Network & Bluetooth ───────── */
+#network {
+  color: #FED6BC;
+}
+
+#network.disconnected {
+  color: #FF8B94;
+}
+
+#bluetooth {
+  color: #FED6BC;
+}
+
+#bluetooth.connected {
+  color: #FFB7B2;
+}
+
+/* ───────── Other Modules ───────── */
+#backlight { color: #FFD8A8; }
+#idle_inhibitor { color: #FED6BC; }
+#custom-updates { color: #FFB7B2; }
+#custom-clipboard { color: #FED6BC; }
+#custom-notifications { color: #FED6BC; }
+
+/* ───────── Privacy ───────── */
+#privacy { color: #FF8B94; }
+
+/* ───────── Power ───────── */
+#custom-power {
+  color: #FF8B94;
+  font-size: 13px;
+}
+
+/* ───────── Tooltips ───────── */
+tooltip {
+  background: rgba(28, 25, 23, 0.95);
+  border: 1px solid #FED6BC;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+tooltip label {
+  color: #FFF5E1;
+}
+
+/* ───────── Animations ───────── */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}

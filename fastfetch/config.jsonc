@@ -1,0 +1,32 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "display",
+    "de",
+    "wm",
+    "cursor",
+    "terminal",
+    "cpu",
+    "gpu",
+    "memory",
+    "swap",
+    "disk",
+    "battery",
+    "poweradapter",
+    {
+            "type": "media",
+            "key": "Now playing",
+            "format": "{artist} - {title}",
+            "color": { "red": 255, "green": 165, "blue": 0 },
+	          "playerName": "spotify",
+        }
+  ]
+}
