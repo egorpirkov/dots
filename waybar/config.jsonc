@@ -56,7 +56,7 @@
     "memory",
     "pulseaudio",
     "network",
-    "custom/notifications"
-    // "tray",
+    "custom/notifications",
+    "tray"
   ]
 }

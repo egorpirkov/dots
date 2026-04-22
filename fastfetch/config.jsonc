@@ -26,7 +26,8 @@
             "key": "Now playing",
             "format": "{artist} - {title}",
             "color": { "red": 255, "green": 165, "blue": 0 },
-	          "playerName": "spotify",
-        }
+	          "playerName": "spotify"
+},
+  "break"
   ]
 }
