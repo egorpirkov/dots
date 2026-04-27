@@ -291,7 +291,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark"
 spawn-at-startup "gentoo-pipewire-launcher"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "sh" "-c" "DISPLAY=:0 pano-scrobbler"
+// spawn-at-startup "sh" "-c" "DISPLAY=:0 pano-scrobbler"
 spawn-at-startup "swaybg" "-o" "DP-3" "-i" "/home/idgaf/down the drain wallpaper.jpeg" "-m" "fill" "-o" "HDMI-A-1" "-i" "/home/idgaf/waves.jpeg" "-m" "fill"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
