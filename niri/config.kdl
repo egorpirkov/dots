@@ -107,9 +107,9 @@ output "DP-3" {
     // automatically.
     position x=1280 y=0
 
-    hot-corners {
-    top-left
-}
+   hot-corners {
+    off
+   }
 }
 
 output "HDMI-A-1" {
@@ -276,7 +276,7 @@ layout {
     struts {
         // left 64
         // right 64
-        top -6
+        top -6 // waybar
         // bottom 64
     }
 }
@@ -287,18 +287,18 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
-spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark"
-spawn-at-startup "gentoo-pipewire-launcher"
-spawn-at-startup "xwayland-satellite"
-// spawn-at-startup "sh" "-c" "DISPLAY=:0 pano-scrobbler"
-spawn-at-startup "swaybg" "-o" "DP-3" "-i" "/home/idgaf/down the drain wallpaper.jpeg" "-m" "fill" "-o" "HDMI-A-1" "-i" "/home/idgaf/waves.jpeg" "-m" "fill"
+spawn-at-startup "waybar" // waybar
+spawn-at-startup "gsettings" "set" "org.gnome.desktop.interface" "color-scheme" "prefer-dark" // gtk dark theme
+spawn-at-startup "gentoo-pipewire-launcher" // sound
+spawn-at-startup "xwayland-satellite" // x11 satellite
+spawn-at-startup "sh" "-c" "sleep 2 && pano-scrobbler -m" // sleep 2 cuz pano-scrobbler faster than tray init
+spawn-at-startup "swaybg" "-o" "DP-3" "-i" "/home/idgaf/down the drain wallpaper.jpeg" "-m" "fill" "-o" "HDMI-A-1" "-i" "/home/idgaf/waves.jpeg" "-m" "fill" // wallpaper
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -306,7 +306,8 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+
+prefer-no-csd // no ugly csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -350,6 +351,7 @@ window-rule {
     open-floating true
 }
 
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -373,7 +375,7 @@ window-rule {
 binds {
 
 
-    Alt+Space { spawn "wofi" "--show" "run"; }
+    Alt+Space { spawn "fuzzel"; }
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
     // like wev.

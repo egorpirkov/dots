@@ -23,3 +23,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias sudo "doas"
     
 end
+
+# opencode
+fish_add_path /home/idgaf/.opencode/bin
